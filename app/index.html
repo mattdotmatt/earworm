@@ -1,9 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
     <title></title>
+    <script src="lib/angular.min.js" language="JavaScript"></script>
+    <script src="js/earworm.js"></script>
+    <link rel="stylesheet" href="css/earworm.css">
 </head>
 <body>
+<div>
+    <ul>
+        <li>
+            <label for="username">Name:</label>
+            <input id="username" type="text" ng-model="name" placeholder="Enter your name here">
+        </li>
+        <li>
+            <label for="dob">Date of Birth:</label>
+            <input id="dob" type="date" ng-model="dob" placeholder="Enter your date of birth here">
+        </li>
+    </ul>
+    <hr>
+    <h1>Hello {{name}}, let's find the songs released on {{dob}}</h1>
 
+    <form ng-submit="findEarworm()">
+        <input class="btn-primary" type="submit" value="Worm my ears">
+    </form>
+</div>
 </body>
 </html>
